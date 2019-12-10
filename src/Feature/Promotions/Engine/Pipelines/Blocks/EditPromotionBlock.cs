@@ -112,7 +112,7 @@ namespace SamplePromotions.Feature.Promotions.Engine.Pipelines.Blocks
 			}
 			else if (promotion.HasPolicy<ExclusivePromotionPolicy>())
 			{
-				promotion.Policies.Remove(promotion.GetPolicy<ExclusivePromotionPolicy>());
+                promotion.RemovePolicy(typeof(ExclusivePromotionPolicy));
 			}
 
 			var component = promotion.GetComponent<TransientListMembershipsComponent>();
